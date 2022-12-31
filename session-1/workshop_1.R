@@ -50,6 +50,7 @@ opa_df <- read.csv("C://Users/Jonathan Tannen/Downloads/opa_properties_public.cs
 ## a: ppsf, the price per square foot.
 ## b: has_fireplace, which is 1 if there is at least one fireplace.
 ## c: full_address, which is "{location}, Philadelphia, PA {zip}"
+## d: is_residential, which is 1 if zoning begins with 'R'.
 
 
 
