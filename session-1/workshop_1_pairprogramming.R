@@ -7,7 +7,7 @@
 acsphilly <- read.csv("C://Users//Jonathan Tannen///Downloads//acs_phila_2015_5yr.csv")
 
 
-## Task 1: Familiarize yourself with the survey. What types of variables do we have?
+## Task 1: Familiarize yourself with the survey. What variables do we have?
 
 
 
@@ -34,11 +34,11 @@ acsphilly <- read.csv("C://Users//Jonathan Tannen///Downloads//acs_phila_2015_5y
 
 ## Task 5: 
 ## Create a histogram of income for the entire population, 
-## and then for a subgroup of your choice.
+## and then for a subgroup of your choice. (Hint: Consider "hist()")
 
 
 
-## Task 7: 
+## Task 6: 
 ## The variable "serial" is an id for each household.
 ## However, serial numbers get repeated in different years.
 ## Create a new variable "year_serial" which is the year pasted together with the serial.
@@ -46,20 +46,20 @@ acsphilly <- read.csv("C://Users//Jonathan Tannen///Downloads//acs_phila_2015_5y
 
 
 
-## Task 8: What is the largest household? Who lives inside?
+## Task 7: What is the largest household? Who lives inside it?
 
 
 ## Household 2011_1042948 shows up a bunch of times! What is it?
 
 
 
-## Task 9:
+## Task 8:
 ## *Challenge*: How many different households do we have?
 ## You may end up using unique(), duplicated(), length()
 
 
 
-## Task 10: 
+## Task 9: 
 ## *Challenge*: The variable "perwt" contains the survey weights for each row. 
 ## Calculate the weighted.mean() of income. How does it compare to the observed mean?
 ## The help file ?weighted.mean may help.

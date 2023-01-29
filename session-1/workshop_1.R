@@ -42,6 +42,7 @@ opa_df <- read.csv("C://Users/Jonathan Tannen/Downloads/opa_properties_public.cs
 ## d: What is the median sale price among those with at least $100?
 ## e: What is the maximum sale price in 19104?
 ## f: Use hist() to create a simple histogram of log() sale price.
+## f2: Can we make this a probability density histogram? Use ?hist
 
 
 
