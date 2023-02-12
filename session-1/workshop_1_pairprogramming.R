@@ -24,13 +24,40 @@ acsphilly <- read.csv("C://Users//Jonathan Tannen///Downloads//acs_phila_2015_5y
 ## c: What is the median income among employed respondents?
 ## d: Create a new dataframe, named acs_emp that is only the subset that is employed. 
 
+acs_emp <- acsphilly[
+  acsphilly$empstat == "Employed" & !is.na(acsphilly$empstat), 
+]
 
 
 ## Task 4:
 ## a: What are the possible values of raceth?
 ## b: What is the median income among employed respondents of each race/ethnicity?
 
+median(
+  acsphilly$incwage[acsphilly$raceth == "B-NH" & acsphilly$empstat == "Employed"]
+)
 
+median(
+  acs_emp$incwage[acsphilly$raceth == "B-NH"],
+  na.rm=TRUE
+)
+
+median(acs_emp$incwage[acsphilly$raceth == "Hispanic"], na.rm=TRUE)
+
+
+for(re in c("B-NH", "W-NH", "Hispanic")){
+  print(re)
+  print(
+    median(
+      acs_emp$incwage[acs_emp$raceth == re],
+      na.rm=TRUE
+    )
+  )
+}
+
+library(dplyr)
+
+acsphilly %>% filter(empstat=="Employed") %>% group_by(raceth) %>% summarise(median(incwage))
 
 ## Task 5: 
 ## Create a histogram of income for the entire population, 
