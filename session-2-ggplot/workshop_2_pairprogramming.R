@@ -13,7 +13,7 @@ acsphilly <- read.csv(r"(C:\Users\Jonathan Tannen\Downloads\acs_phila_2015_5yr.c
 # 1a: Make a histogram of wages
 
 
-# 1b: Replace the geom_histogram with a geom_freqpoly/
+# 1b: Replace the geom_histogram with a geom_freqpoly
 
 
 # 1c: Add information about `sex` to the plot.
