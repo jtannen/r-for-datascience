@@ -45,6 +45,8 @@ phila_acs <- get_acs(
   output="wide"
 )
 
+phila_census
+
 
 
 # Task 1: Make a map of race & ethnicity by Census tract.
@@ -53,7 +55,37 @@ phila_acs <- get_acs(
 # - Create the necessary variables.
 # - Pivot or filter the data to get what you need.
 
+# Map the White NH proportion
 
+phila_census <- phila_census |>
+  mutate(
+    prop_wnh = pop_wnh / pop_total 
+  )
+
+ggtracts <- phila_tracts |>
+  left_join(phila_census, by="GEOID")
+
+ggplot(ggtracts) + 
+  geom_sf(aes(fill = prop_wnh))
+
+library(tidyr)
+ggtracts <- phila_tracts |>
+  left_join(phila_census, by="GEOID") |>
+  pivot_longer(pop_wnh:pop_hisp, names_to = "raceth") |>
+  mutate(
+    prop = value / pop_total,
+    race_label = case_when(
+      raceth == "pop_a" ~ "Asian",
+      raceth == "pop_aian" ~ "AI/AN",
+      TRUE ~ "Default Value"
+    )
+  )
+
+ggplot(ggtracts) + 
+  geom_sf(aes(fill = prop)) +
+  facet_wrap(~raceth) +
+  theme_map() %+replace%
+  theme(legend.position = "right")
 
 
 # Task 1b: What projection are the census tracts using? 
