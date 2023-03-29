@@ -41,8 +41,7 @@ opa_df <- read.csv(
 
 # Challenge: Map the zip code fixed effects.
 
-setwd("C:/Users/Jonathan Tannen/Dropbox/Documents/courses/r-for-datascience/session-4-gis/")
-zips <- st_read("data/Zipcodes_Poly.shp")
+zips <- st_read("path/to/data/Zipcodes_Poly.shp")
 
 
 
